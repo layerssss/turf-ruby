@@ -21,7 +21,7 @@ module Turf
 
     geom = {
       type: "LineString",
-      coordinates: coordinates
+      coordinates: coordinates,
     }
     feature(geom, properties, options)
   end
@@ -29,7 +29,15 @@ module Turf
   def self.point(coordinates, properties = nil, options = {})
     geom = {
       type: "Point",
-      coordinates: coordinates
+      coordinates: coordinates,
+    }
+    feature(geom, properties, options)
+  end
+
+  def self.polygon(coordinates, properties = nil, options = {})
+    geom = {
+      type: "Polygon",
+      coordinates: coordinates,
     }
     feature(geom, properties, options)
   end
